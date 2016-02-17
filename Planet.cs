@@ -7,11 +7,6 @@ public class Planet
 	private float gravity; // ft/(s^2)
 	private float escapeVelocity; // miles/s
 
-	public Planet()
-	{
-
-	}
-	
 	public float getMass()
 	{
 		return mass;

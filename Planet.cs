@@ -1,11 +1,22 @@
 public class Planet
 {
 	// Planet information
+	private string name;
 	private float mass; // 10^21 tons
 	private int diameter; // miles
 	private int density; // lbs/(ft^3)
 	private float gravity; // ft/(s^2)
 	private float escapeVelocity; // miles/s
+
+	public string getName()
+	{
+		return name;
+	}
+
+	public void setName(string inputName)
+	{
+		name = inputName;
+	}
 
 	public float getMass()
 	{

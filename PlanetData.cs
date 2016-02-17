@@ -73,8 +73,6 @@ public class PlanetData : Form
 				{
 					if (line.Length > 0)
 					{
-						Console.WriteLine(line);
-
 						if (char.IsLetter(line[0]))
 						{
 							planetIndex = 0;
@@ -106,7 +104,7 @@ public class PlanetData : Form
 
 							planetIndex++;
 						}
-					}			
+					}	
 				}
 			}
 		}

@@ -1,0 +1,9 @@
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\bin\Debug\SpaceStats.exe.config
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\bin\Debug\SpaceStats.exe
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\bin\Debug\SpaceStats.pdb
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\obj\Debug\SpaceStats.csprojResolveAssemblyReference.cache
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\obj\Debug\SpaceStats.Properties.Resources.resources
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\obj\Debug\SpaceStats.csproj.GenerateResource.Cache
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\obj\Debug\SpaceStats.exe
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\obj\Debug\SpaceStats.pdb
+C:\Users\Sunil\Desktop\SpaceStats\SpaceStats\SpaceStats\obj\Debug\PlanetData.resources

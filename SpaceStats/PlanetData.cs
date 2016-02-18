@@ -160,13 +160,13 @@ public class PlanetData : Form
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(78, 127);
+            this.dataGridView1.Location = new System.Drawing.Point(69, 161);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(472, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(463, 260);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -209,11 +209,11 @@ public class PlanetData : Form
         DataTable dt = new DataTable("PlanetInfo");
 
         dt.Columns.Add("Name", System.Type.GetType("System.String"));
-        dt.Columns.Add("Mass", System.Type.GetType("System.Single"));
-        dt.Columns.Add("Diameter", System.Type.GetType("System.Int32"));
-        dt.Columns.Add("Density", System.Type.GetType("System.Int32"));
-        dt.Columns.Add("Gravity", System.Type.GetType("System.Single"));
-        dt.Columns.Add("Escape Velocity", System.Type.GetType("System.Single"));
+        dt.Columns.Add("Mass (10^21 T)", System.Type.GetType("System.Single"));
+        dt.Columns.Add("Diameter (mi)", System.Type.GetType("System.Int32"));
+        dt.Columns.Add("Density (lbs/ft^3)", System.Type.GetType("System.Int32"));
+        dt.Columns.Add("Gravity (ft/s^2)", System.Type.GetType("System.Single"));
+        dt.Columns.Add("Escape Velocity (mi/s)", System.Type.GetType("System.Single"));
 
         for (int i = 0; i < planets.Length; i++)
         {
@@ -284,5 +284,12 @@ public class PlanetData : Form
         {
             column.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
+
+        for (int i = 0; i < dataGridView1.Columns.Count; i++)
+        {
+            dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        }
+        
     }
+
 }

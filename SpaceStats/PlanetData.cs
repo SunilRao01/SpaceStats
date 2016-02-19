@@ -19,9 +19,30 @@ public class PlanetData : Form
     [STAThread]
     static void Main()
     {
-        Application.EnableVisualStyles();
+        // Run Linq test
+	linqTest();
+	
+	Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         Application.Run(new PlanetData());
+    }
+
+    static void linqTest()
+    {
+	// Data source
+	int [] numbers = new int[8] {0, 1, 2, 3, 4, 5, 6, 7};
+
+	// Query creation
+	var numQuery = 
+		from num in numbers
+		where (num % 2) == 0
+		select num;
+
+	// Query execution
+	foreach (int num in numQuery)
+	{
+		Console.Write(num + " ");
+	}
     }
 
 	public PlanetData()

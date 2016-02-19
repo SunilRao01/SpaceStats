@@ -1,0 +1,8 @@
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/PlanetData.resources
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/SpaceStats.Properties.Resources.resources
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/bin/Debug/SpaceStats.exe.config
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/bin/Debug/SpaceStats.exe.mdb
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/bin/Debug/SpaceStats.exe
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/SpaceStats.exe
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/SpaceStats.exe.mdb

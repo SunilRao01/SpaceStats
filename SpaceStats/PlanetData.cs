@@ -13,7 +13,6 @@ public class PlanetData : Form
     private BindingSource planetBindingSource;
     private System.ComponentModel.IContainer components;
     private Label label1;
-    private BindingSource planetBindingSource1;
 	private Planet[] planets;
 
     [STAThread]
@@ -29,20 +28,20 @@ public class PlanetData : Form
 
     static void linqTest()
     {
-	// Data source
-	int [] numbers = new int[8] {0, 1, 2, 3, 4, 5, 6, 7};
+		// Data source
+		int [] numbers = new int[8] {0, 1, 2, 3, 4, 5, 6, 7};
 
-	// Query creation
-	var numQuery = 
-		from num in numbers
-		where (num % 2) == 0
-		select num;
+		// Query creation
+		var numQuery = 
+			from num in numbers
+			where (num % 2) == 0
+			select num;
 
-	// Query execution
-	foreach (int num in numQuery)
-	{
-		Console.Write(num + " ");
-	}
+		// Query execution
+		foreach (int num in numQuery)
+		{
+			Console.Write(num + " ");
+		}
     }
 
 	public PlanetData()
@@ -52,6 +51,7 @@ public class PlanetData : Form
 		for (int i = 0; i < 10; i++)
 		{
 			planets[i] = new Planet();
+
 
 			// Name planets accordingly
 			switch (i)
@@ -169,11 +169,10 @@ public class PlanetData : Form
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.planetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planetBindingSource1)).BeginInit();
             this.SuspendLayout();
+
             // 
             // dataGridView1
             // 
@@ -181,48 +180,50 @@ public class PlanetData : Form
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+			this.dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 161);
+			this.dataGridView1.Anchor = AnchorStyles.None;
+			this.dataGridView1.Location = new System.Drawing.Point ((ClientSize.Width) / 2, (ClientSize.Height) / 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(463, 260);
             this.dataGridView1.TabIndex = 0;
+
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label1.TextAlign = ContentAlignment.MiddleCenter;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(259, 62);
+		this.label1.Location = new System.Drawing.Point(ClientSize.Width / 2, (ClientSize.Height / 2) - 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Space Stats";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+
             // 
             // planetBindingSource
             // 
             this.planetBindingSource.DataSource = typeof(Planet);
-            // 
-            // planetBindingSource1
-            // 
-            this.planetBindingSource1.DataSource = typeof(Planet);
+
             // 
             // PlanetData
             // 
-            this.ClientSize = new System.Drawing.Size(625, 579);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PlanetData";
             this.Load += new System.EventHandler(this.PlanetData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+			CenterToScreen ();
     }
 
     private void PlanetData_Load(object sender, EventArgs e)

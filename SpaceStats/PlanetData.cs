@@ -142,15 +142,15 @@ public class PlanetData : Form
 					}	
 				}
 			}
-
-            // Make sure to call this in constructor!
-            InitializeComponent();
 		}
 		catch (Exception e)
 		{
 			Console.WriteLine("Planet data could not be read from file!");
 			Console.WriteLine(e.Message);
 		}
+
+		// Make sure to call this in constructor!
+		InitializeComponent();
 	}
 
     private void InitializeComponent()
@@ -162,6 +162,7 @@ public class PlanetData : Form
 		this.nextButton = new System.Windows.Forms.Button ();
 		this.previousButton = new System.Windows.Forms.Button ();
         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+		//((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
         this.SuspendLayout();
 
         // 
@@ -185,7 +186,25 @@ public class PlanetData : Form
 		//
 		// massBarGraph
 		//
-		//this.massBarGraph.
+		/*this.massBarGraph.Location = new Point(0, 0);
+		this.massBarGraph.Palette = ChartColorPalette.EarthTones;
+		System.Windows.Forms.DataVisualization.Charting.Series series = new Series 
+		{
+			Name = "series",
+			IsVisibleInLegend = true,
+			ChartType = SeriesChartType.Column
+		};*/
+
+		//this.massBarGraph.Series.Add (series);
+		// TODO: Apparently adding to the list of series is an undefined function (the 'add' function itself)
+		//this.massBarGraph.Series.Add(series);
+		/*for (int i = 0; i < planets.Length; i++) 
+		{
+			series.Points.Add (planets [i].getMass ());
+			series.Points [i].AxisLabel = planets [i].getName ();
+			series.Points [i].Label = planets [i].getMass ().ToString ();
+		}
+		this.massBarGraph.Invalidate ();*/
 
         // 
         // title
@@ -228,6 +247,7 @@ public class PlanetData : Form
         // 
         this.ClientSize = new System.Drawing.Size(800, 600);
 		this.Controls.Add(this.dataGridView1);
+		this.Controls.Add (this.massBarGraph);
 		this.Controls.Add (this.nextButton);
 		this.Controls.Add (this.previousButton);
 		this.Controls.Add(this.title);
@@ -336,7 +356,6 @@ public class PlanetData : Form
         {
             dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
-        
     }
 
 }

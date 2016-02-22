@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="SpaceStats/SpaceStats.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SpaceStats/PlanetData.cs">
+    <Files>
+      <File FileName="SpaceStats/PlanetData.cs" Line="195" Column="16" />
+      <File FileName="SpaceStats/HomeForm.cs" Line="12" Column="1" />
+      <File FileName="SpaceStats/Planet.cs" Line="1" Column="20" />
+      <File FileName="SpaceStats/PlanetData.resx" Line="11" Column="36" />
+      <File FileName="SpaceStats/App.config" Line="1" Column="1" />
+      <File FileName="SpaceStats/Properties/Resources.Designer.cs" Line="11" Column="7" />
+      <File FileName="SpaceStats/Properties/Settings.Designer.cs" Line="17" Column="79" />
+      <File FileName="SpaceStats/Properties/AssemblyInfo.cs" Line="18" Column="51" />
+      <File FileName="SpaceStats/Properties/DataSources/Planet.datasource" Line="10" Column="27" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

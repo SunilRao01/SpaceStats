@@ -6,3 +6,4 @@
 /home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/bin/Debug/SpaceStats.exe
 /home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/SpaceStats.exe
 /home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/SpaceStats.exe.mdb
+/home/sunil/Documents/winforms/practice/SpaceStats/SpaceStats/obj/Debug/PlanetDataForm.resources

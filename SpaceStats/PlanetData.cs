@@ -6,22 +6,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
+using System.Windows.Forms.DataVisualization.Charting;
 
 public class PlanetData : Form
 {
     private DataGridView dataGridView1;
-    private BindingSource planetBindingSource;
-    private System.ComponentModel.IContainer components;
-    private Label label1;
+	private Chart massBarGraph;
+	private Chart diameterPieChart;
+    private Label title;
+	private Button nextButton;
+	private Button previousButton;
 	private Planet[] planets;
 
     [STAThread]
     static void Main()
     {
         // Run Linq test
-	linqTest();
-	
-	Application.EnableVisualStyles();
+		linqTest();
+		
+		Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         Application.Run(new PlanetData());
     }
@@ -148,29 +151,17 @@ public class PlanetData : Form
 			Console.WriteLine("Planet data could not be read from file!");
 			Console.WriteLine(e.Message);
 		}
-
-        /*
-		// Display planet informatino to console as a test
-		for (int i = 0; i < planets.Length; i++)
-		{
-			Console.WriteLine("Name: " + planets[i].getName());
-			Console.WriteLine("Mass: " + planets[i].getMass());
-			Console.WriteLine("Diameter: " + planets[i].getDiameter());
-			Console.WriteLine("Density: " + planets[i].getDensity());
-			Console.WriteLine("Gravity: " + planets[i].getGravity());
-			Console.WriteLine("Escape Velocity: " + planets[i].getEscapeVelocity() + "\n");
-		}
-         * */
 	}
 
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
         this.dataGridView1 = new System.Windows.Forms.DataGridView();
-        this.label1 = new System.Windows.Forms.Label();
-        this.planetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+		this.massBarGraph = new System.Windows.Forms.DataVisualization.Charting.Chart ();
+		this.diameterPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart ();
+        this.title = new System.Windows.Forms.Label();
+		this.nextButton = new System.Windows.Forms.Button ();
+		this.previousButton = new System.Windows.Forms.Button ();
         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)(this.planetBindingSource)).BeginInit();
         this.SuspendLayout();
 
         // 
@@ -190,44 +181,75 @@ public class PlanetData : Form
 		this.dataGridView1.AutoSize = true;
         this.dataGridView1.TabIndex = 0;
 		this.dataGridView1.Anchor = AnchorStyles.Top;
-		//this.dataGridView1.Dock = DockStyle.None;
+
+		//
+		// massBarGraph
+		//
+		//this.massBarGraph.
 
         // 
-        // label1
+        // title
         // 
-		Padding pad = this.label1.Padding;
+		Padding pad = this.title.Padding;
 		pad.Top = 10;
-		this.label1.Padding = pad;
-		this.label1.TextAlign = ContentAlignment.MiddleCenter;
-        this.label1.AutoSize = false;
-        this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.label1.Name = "label1";
-        this.label1.Text = "Space Stats";
-        this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-		this.label1.Anchor = AnchorStyles.None;
-		this.label1.Dock = DockStyle.Fill;
+		this.title.Padding = pad;
+        this.title.AutoSize = false;
+        this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.title.Name = "title";
+        this.title.Text = "Space Stats";
+        this.title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+		this.title.Anchor = AnchorStyles.None;
+		this.title.Dock = DockStyle.Fill;
 
-        // 
-        // planetBindingSource
-        // 
-        this.planetBindingSource.DataSource = typeof(Planet);
+		//
+		// nextButton
+		//
+		this.nextButton.Text = ">";
+		this.nextButton.AutoSize = true;
+		this.nextButton.TextAlign = ContentAlignment.MiddleCenter;
+		this.nextButton.Location = new Point (500, 310);
+		this.nextButton.Name = "nextButton";
+		this.nextButton.Anchor = AnchorStyles.None;
+		this.nextButton.Click += new EventHandler (nextChart);
+
+		//
+		// previousButton
+		//
+		this.previousButton.Text = "<";
+		this.previousButton.AutoSize = true;
+		this.previousButton.TextAlign = ContentAlignment.MiddleCenter;
+		this.previousButton.Location = new Point (230, 310);
+		this.previousButton.Name = "previousButton";
+		this.previousButton.Anchor = AnchorStyles.None;
+		this.previousButton.Click += new EventHandler (previousChart);
 
         // 
         // PlanetData
         // 
         this.ClientSize = new System.Drawing.Size(800, 600);
 		this.Controls.Add(this.dataGridView1);
-		this.Controls.Add(this.label1);
+		this.Controls.Add (this.nextButton);
+		this.Controls.Add (this.previousButton);
+		this.Controls.Add(this.title);
         
         this.Name = "PlanetData";
         this.Load += new System.EventHandler(this.PlanetData_Load);
         ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-        ((System.ComponentModel.ISupportInitialize)(this.planetBindingSource)).EndInit();
         this.ResumeLayout(false);
         this.PerformLayout();
 
 		CenterToScreen ();
     }
+
+	private void nextChart(object sender, EventArgs e)
+	{
+		this.dataGridView1.Show ();
+	}
+
+	private void previousChart(object sender, EventArgs e)
+	{
+		this.dataGridView1.Hide ();
+	}
 
     private void PlanetData_Load(object sender, EventArgs e)
     {
